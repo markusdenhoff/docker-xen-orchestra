@@ -33,6 +33,9 @@ RUN git clone --depth=1 -b stable http://github.com/vatesfr/xo-server && \
 RUN cd xo-server/ && yarn && yarn run build && cd ..
 RUN cd xo-web/ && yarn && yarn run build
 
+# Add plugins
+RUN cd xo-server/ && yarn add xo-server-backup-reports xo-server-transport-nagios xo-server-transport-email
+
 # Clean up
 RUN apt-get -qq purge build-essential make gcc git libpng-dev curl && \
     apt-get autoremove -qq && apt-get clean && \
