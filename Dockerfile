@@ -25,7 +25,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     apt-get -qq update && apt-get install yarn
 
 # Clone code
-RUN git clone --depth=1 -b stable http://github.com/vatesfr/xo-server && \
+RUN git clone --depth=1 -b xo-server/stable http://github.com/vatesfr/xen-orchestra xo-server && \
     git clone --depth=1 -b stable http://github.com/vatesfr/xo-web && \
     rm -rf xo-server/.git xo-web/.git xo-server/sample.config.yaml
 
