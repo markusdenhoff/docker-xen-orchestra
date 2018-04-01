@@ -34,6 +34,8 @@ RUN yarn && yarn run build
 RUN cd /app/packages/xo-server && yarn add \
     xo-server-backup-reports  \
     xo-server-transport-nagios  \
+    xo-server-transport-slack \
+    xo-server-usage-report  \
     xo-server-transport-email
 
 # Clean up
