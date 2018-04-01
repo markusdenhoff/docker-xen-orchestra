@@ -31,7 +31,10 @@ RUN git clone --depth=1 -b stable http://github.com/vatesfr/xen-orchestra . && \
 
 # Build dependencies
 RUN yarn && yarn run build
-RUN cd /app/packages/xo-server && yarn add xo-server-backup-reports xo-server-transport-nagios xo-server-transport-email
+RUN cd /app/packages/xo-server && yarn add \
+    xo-server-backup-reports  \
+    xo-server-transport-nagios  \
+    xo-server-transport-email
 
 # Clean up
 RUN apt-get -qq purge build-essential make gcc git libpng-dev curl && \
